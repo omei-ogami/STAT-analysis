@@ -88,6 +88,6 @@ print("Training and evaluating the models took {:.2f} seconds".format(end_time -
 
 # save the params_df to a .csv file
 print("Saving the results...")
-params_df.to_csv('data/results.csv', index=False)
+params_df.to_csv('data/testing_set.csv', index=False)
 
 print("Done!")
