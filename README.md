@@ -1,5 +1,4 @@
-# Hyperparameter Optimization for XGBoost Classification
-
+# Hyperparameters Effects on XGBoost Model
 This project performs hyperparameter optimization for an XGBoost binary classification model. It generates random hyperparameters, trains the model on a dataset, and evaluates the model's performance using F1-score. The goal is to analyze the relationship between hyperparameters and F1-score using a regression model.
 
 ## Project Overview
@@ -13,6 +12,8 @@ Then, we conduct a statistical analysis to determine the relationship between hy
 - **train.csv**: The training dataset, including features and target variable (`Depression`).
 - **test.csv**: The test dataset used to evaluate the model's performance.
 - **results.csv**: The output file containing the hyperparameters and their corresponding F1-scores.
+- **eda_data.csv**: The output file containing the hyperparameters and their corresponding F1-scores after performing EDA (Exploratory Data Analysis).
+- **testing_set.csv**: The test dataset used to evaluate the model's performance.
 
 ## Hyperparameters
 
@@ -27,13 +28,4 @@ The following hyperparameters are randomly generated and optimized:
 - `lambda`: L2 regularization term.
 - `colsample_bytree`: The fraction of features used for each tree.
 - `scale_pos_weight`: The balance of positive and negative weights for imbalanced classes.
-
-## Requirements
-
-- Python 3.x
-- `xgboost`
-- `pandas`
-- `numpy`
-- `sklearn`
-- `tqdm`
 
