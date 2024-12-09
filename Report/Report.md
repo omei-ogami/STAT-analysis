@@ -81,16 +81,15 @@ We perform a stepwise regression in both forward and backward directions to find
 
 The result of the model is shown in the table below.
 
-| Hyperparameter | Estimate Coef. | VIF |
+| Hyperparameter | Estimate Coef. | p-value |
 | :--- | ---:| --- |
-| (Intercept) | 8.237e-01 |  |
-| subsample | 2.022e-02 | 1.41 |
-| gamma | 5.900e-03 | 1.00 |
-| learning_rate + n_estimators | 8.366e-06 | 5.71 |
-| learning_rate + max_depth | -8.875e-03 | 4.60 |
-| scale_pos_weight | -3.958e-03 | 1.00 | 
-| max_depth + subsample | -1.264e-03 | 2.51 |
-| n_estimators | -9.522e-06 | 3.07 |
+| (Intercept) | 8.237e-01 | 2e-16 |
+| subsample | 2.022e-02 | 2e-16 |
+| gamma | 5.900e-03 | 2.4e-09 |
+| learning_rate + max_depth | -8.875e-03 | 2e-16 |
+| scale_pos_weight | -3.958e-03 | 2e-16 | 
+| max_depth + subsample | -1.264e-03 | 2e-16 |
+| n_estimators | -9.522e-06 | 2e-16 |
 
 
 *(Table 1. Regression Model Result)*
@@ -101,7 +100,7 @@ The F-statistic of the model is 460.9 on 7 with the degree of freedom 1492, whic
 
 From the diagnosis plots of the data, we can see that
 - **Normality**: Q-Q plot shows some deviation from normality, especially the tails, it's probably due to the outliers. However, it's not severe and acceptable.
-- **Mean model**: the residual seems to be scattered around zero in Residual vs Fitted plot randomly, which appears to met.
+- **Mean model**: some special patterns are observed in the Residuals vs Fitted plot, which indicates that the model is not well-fitted. It looks like some discrete variables are missed.
 - **Equal variance**: from the Scale-Location plot, we can see that the red line is close to horizontal, which means the equal variance assumption is met.
 - **Outliers**: some points are identified as outliers, but they are not severe and I decide to ignore them.
 
@@ -123,7 +122,7 @@ Here I've generated another data (750 rows) as the testing set. We may find that
 The table shows the metrics of the model performance:
 | Metric | Multiple R-squared | Adjusted R-squared | Training Data | Testing Data |
 | --- |:---:|:---:|:---:|:---:|
-| R-squared | 0.6838 | 0.6823 | 0.6840 | 0.6657 |
+| R-squared | 0.6832 | 0.6820 | 0.6834 | 0.6662 |
 | Mean Absolute Error (MAE) |  |  | 0.0042 | 0.0041 |
 
 > Due to the small range of F1-score, MAE will be better to evaluate the model performance rather than MSE.
