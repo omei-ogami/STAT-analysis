@@ -69,7 +69,7 @@ Here I will just list some of the interactions according to the domain knowledge
 > For example, a model with large `n_estimators` often needs a smaller `learning_rate` to prevent overfitting.
 
 We can check the correlations again. It looks like most of the interactions have a higher negative correlation with F1-score.
-![Figure 4. Correlation with F1-score after adding interactions](image-3.png)
+![alt text](image-7.png)
 *(Figure 4. Correlation with F1-score after adding interactions)*
 
 ## Regression Model
@@ -86,10 +86,10 @@ The result of the model is shown in the table below.
 | (Intercept) | 8.237e-01 |  |
 | subsample | 2.022e-02 | 1.41 |
 | gamma | 5.900e-03 | 1.00 |
-| learning_rate_n_estimators | 8.366e-06 | 5.71 |
-| learning_rate_max_depth | -8.875e-03 | 4.60 |
+| learning_rate + n_estimators | 8.366e-06 | 5.71 |
+| learning_rate + max_depth | -8.875e-03 | 4.60 |
 | scale_pos_weight | -3.958e-03 | 1.00 | 
-| max_depth_subsample | -1.264e-03 | 2.51 |
+| max_depth + subsample | -1.264e-03 | 2.51 |
 | n_estimators | -9.522e-06 | 3.07 |
 
 
@@ -155,3 +155,5 @@ This report is based on the following sources:
 
 - [XGBoost Documentation](https://xgboost.readthedocs.io/en/stable/parameter.html)
 - [STAT-analysis](https://github.com/omei-ogami/STAT-analysis): you can find all the code and data in my Github.
+
+AI has been used to generate some of the figures in this report.
